@@ -7,7 +7,7 @@
     </string-array>
     <string-array name="Bearing_units">
         <item name="Degrees"></item>
-        <item name="Mils"></item>
+        <item name="mils"></item>
     </string-array>
 
 </resources>
