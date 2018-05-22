@@ -1,6 +1,8 @@
+//Team: Akshay, Sneha
 package com.example.akshay.geocalc;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import static android.R.attr.data;
 
@@ -105,12 +108,19 @@ public class homeScreen extends AppCompatActivity {
         });
 
         Calculatedis.setOnClickListener(v -> {
-            /*String l1 = latp1.getText().toString();
-            if(l1.length()==0){
-                Snackbar.make(latp1,"Enter a value", Snackbar.LENGTH_LONG).show();
-            }*/
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(Calculatedis.getWindowToken(),0);
+            imm.hideSoftInputFromInputMethod(Calculatedis.getWindowToken(),0);
+
+            String l1 = latp1.getText().toString();
+            String lg1 = longp1.getText().toString();
+            String l2 = latp2.getText().toString();
+            String lg2 = longp2.getText().toString();
+            if(l1.length()==0 || lg1.length()==0 || l2.length()==0 || lg2.length()==0){
+                Snackbar.make(latp1,"Please enter the values", Snackbar.LENGTH_LONG).show();
+                return;
+            }
+
+
 
             lat1 = Double.parseDouble(latp1.getText().toString());
             long1 = Double.parseDouble(longp1.getText().toString());
