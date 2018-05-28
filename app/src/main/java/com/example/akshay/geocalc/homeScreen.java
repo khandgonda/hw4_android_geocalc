@@ -30,6 +30,7 @@ import static android.R.attr.data;
 
 public class homeScreen extends AppCompatActivity {
     Button settings;
+    //home page
     TextView dtv, btv;
     String dmeasure ="Kilometer";
     String bmeasure = "Degrees";
